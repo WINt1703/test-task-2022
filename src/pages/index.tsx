@@ -6,6 +6,7 @@ import {getUsers} from "../common/api/users";
 import GetUserResponse from "../common/types/users/GetUserResponse";
 import {NextPage} from "next";
 import {Grid} from "@mui/material";
+import Loading from "../module/loading/components/Loading";
 
 export async function getServerSideProps(): Promise<{ props: IndexProps }> {
     return {
@@ -21,11 +22,13 @@ type IndexProps = {
 
 const Index: NextPage<IndexProps> = ({ usersResponse }) => {
     return (
-        <Grid maxWidth={1170} margin={"auto"}>
-            <Header/>
-            <Description/>
-            <Employers usersResponse={usersResponse}/>
-        </Grid>
+        <Loading>
+            <Grid maxWidth={1170} margin={"auto"}>
+                <Header/>
+                <Description/>
+                <Employers usersResponse={usersResponse}/>
+            </Grid>
+        </Loading>
     );
 };
 

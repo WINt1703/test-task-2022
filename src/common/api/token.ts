@@ -19,7 +19,7 @@ export async function getTokenFromCookie(): Promise<string> {
     const token = getCookie("token")
 
     if (token)
-        return new Promise(() => token.toString())
+        return Promise.resolve(token.toString())
 
     return await refreshToken().then(res => res.token)
 }

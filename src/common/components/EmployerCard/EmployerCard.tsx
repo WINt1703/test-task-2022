@@ -1,7 +1,7 @@
 import React from 'react';
 import User from "../../types/users/User";
 import {NextPage} from "next";
-import {Grid, Typography} from "@mui/material";
+import {Grid, Tooltip, Typography} from "@mui/material";
 import Image from "next/image";
 
 type EmployerCard = {
@@ -26,16 +26,29 @@ const EmployerCard: NextPage<EmployerCard> = ({ employer }) => {
                    alt={employer.name}
                    style={{ borderRadius: "50%" }}
             />
-            <Typography width={"100%"} noWrap marginTop={2.5} textAlign={"center"}>
-                { employer.name }
-                <Typography noWrap marginTop={2.5}>
+            <Tooltip title={employer.name}>
+                <Typography width={"100%"} noWrap marginTop={2.5} textAlign={"center"}>
+                    { employer.name }
+                </Typography>
+            </Tooltip>
+
+            <Tooltip title={employer.position}>
+                <Typography width={"100%"} marginTop={2.5} noWrap textAlign={"center"}>
                     { employer.position }
-                    <br/>
+                </Typography>
+            </Tooltip>
+
+            <Tooltip title={employer.email}>
+                <Typography width={"100%"} noWrap textAlign={"center"}>
                     { employer.email }
-                    <br/>
+                </Typography>
+            </Tooltip>
+
+            <Tooltip title={employer.phone}>
+                <Typography width={"100%"} noWrap textAlign={"center"}>
                     { employer.phone }
                 </Typography>
-            </Typography>
+            </Tooltip>
         </Grid>
     );
 };

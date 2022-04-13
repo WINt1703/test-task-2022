@@ -26,6 +26,18 @@ export default createTheme({
         },
     },
     components: {
+        MuiTooltip: {
+          styleOverrides: {
+              tooltip: {
+                  background: "rgba(0, 0, 0, 0.87)",
+                  borderRadius: "4px",
+                  color: "#fff",
+                  height: "25px",
+                  display: "flex",
+                  alignItems: "center"
+              }
+          }
+        },
         MuiButton: {
             styleOverrides: {
                 root: {

@@ -15,9 +15,8 @@ axiosApiInstance.interceptors.request.use(
         return config;
     },
     (error: AxiosError) => {
-
         clearToken()
-        Promise.reject(error)
+        return Promise.reject(error)
 });
 
 axiosApiInstance.interceptors.response.use((response) => {
@@ -26,9 +25,15 @@ axiosApiInstance.interceptors.response.use((response) => {
     const originalRequest = error.config;
     if (error.response && error.response.status === 401) {
         const {token} = await refreshToken();
-        axios.defaults.headers.common["Token"] = token;
-        return axiosApiInstance(originalRequest);
+
+        return axiosApiInstance({
+            ...originalRequest,
+            headers: {
+                "Token": token,
+            }
+        });
     }
+
     clearToken()
     return Promise.reject(error);
 });
