@@ -1,6 +1,6 @@
 import {Button, Grid, List, ListItem, Typography} from '@mui/material';
 import React, {useState} from 'react';
-import GetUserResponse from "../../types/users/GetUserResponse";
+import UsersResponse from "../../types/users/UsersResponse";
 import {NextPage} from "next";
 import EmployerCard from "../EmployerCard/EmployerCard";
 import styles from "/styles/employers.module.css"
@@ -10,11 +10,11 @@ import {useDispatch} from "react-redux";
 import {setLoading} from "../../../module/loading/slices/loadingSlice";
 
 type EmployersProps = {
-    usersResponse: GetUserResponse,
+    usersResponse: UsersResponse,
 }
 
 const Employers: NextPage<EmployersProps> = (props) => {
-    const [usersResponse, setUsersResponse] = useState<GetUserResponse>(props.usersResponse)
+    const [usersResponse, setUsersResponse] = useState<UsersResponse>(props.usersResponse)
     const dispatch = useDispatch()
 
     const showMoreHandler = async () => {

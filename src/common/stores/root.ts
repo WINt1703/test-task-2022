@@ -1,12 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
-import loadingReducers from "../../module/loading/slices/loadingSlice"
-
-export interface RootStore {
-    loading: boolean
-}
+import loadingReducer from "../../module/loading/slices/loadingSlice"
+import toastReducer from "../../module/toast/slices/toastSlice"
 
 export default configureStore({
     reducer: {
-        loading: loadingReducers,
+        loading: loadingReducer,
+        toast: toastReducer,
     }
 })

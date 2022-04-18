@@ -1,0 +1,26 @@
+.input {
+    border-color: #D0CFCF;
+    border-width: 1px 1px 1px 0;
+
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.button {
+    padding: 0 14px;
+    border: 1px solid rgba(0, 0, 0, 0.87);
+    background-color: transparent;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.button:active {
+    background-color: rgba(0, 0, 0, .1);
+}

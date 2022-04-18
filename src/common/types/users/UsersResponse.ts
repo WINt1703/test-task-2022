@@ -1,7 +1,7 @@
 import Links from "./Links";
 import User from "./User";
 
-interface GetUserResponse {
+interface UsersResponse {
     success: boolean,
     page: number,
     total_pages: number,
@@ -11,4 +11,4 @@ interface GetUserResponse {
     users: Array<User>,
 }
 
-export default GetUserResponse
+export default UsersResponse

@@ -1,5 +1,5 @@
 interface Position {
-    id: string,
+    id: number,
     name: string,
 }
 

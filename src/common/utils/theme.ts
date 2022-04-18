@@ -1,4 +1,5 @@
 import {createTheme} from "@mui/material";
+import {red} from "@mui/material/colors";
 
 export default createTheme({
     palette: {
@@ -38,6 +39,59 @@ export default createTheme({
               }
           }
         },
+        MuiFormControlLabel: {
+          styleOverrides: {
+              root: {
+                  marginTop: "8.4px"
+              }
+          }
+        },
+        MuiFormHelperText: {
+          styleOverrides: {
+              root: {
+                  fontSize: "12px",
+                  lineHeight: "14px",
+              }
+          }
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                disableRipple: true
+            }
+        },
+        MuiRadio: {
+          styleOverrides: {
+              root: {
+                  padding: "0 9px",
+                  "&.Mui-checked": {
+                      color: "#00BDD3",
+                  }
+              }
+          }
+        },
+        MuiTextField: {
+            defaultProps: {
+              InputLabelProps: {
+                  required: false
+              }
+            },
+            styleOverrides: {
+                root: {
+                    color: "#7E7E7E",
+                    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#D0CFCF",
+                    },
+                    "& .MuiOutlinedInput-root.Mui-focused  .MuiOutlinedInput-notchedOutline":
+                    {
+                        borderColor: "#D0CFCF",
+                        borderWidth: "1px",
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                        color: "#7E7E7E"
+                    }
+                },
+            },
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -50,7 +104,7 @@ export default createTheme({
                     "&:hover": {
                         background: "#FFE302",
                     },
-                    "&:disabled": {
+                    "&.Mui-disabled": {
                         background: "#B4B4B4",
                         color: "rgba(255, 255, 255, 0.87)",
                     },
